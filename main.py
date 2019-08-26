@@ -49,7 +49,7 @@ class BinarySignature:
                 _break = True
             else:
                 _start = _end
-                _end = _start+int(_format.get('read'))
+                _end = _start+_format.get('read')
                 _signature = _format
                 del _signature['read']
 
