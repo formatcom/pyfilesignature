@@ -45,7 +45,9 @@ class BinarySignature:
                 self._data[_start:_end]
             )
 
-            if isinstance(_format, str):
+            if not _format:
+                return None
+            elif isinstance(_format, str):
                 _break = True
             else:
                 _start = _end
@@ -56,7 +58,7 @@ class BinarySignature:
         self._format = _format
         return _format
 
-_list = ('linux.png', 'python.jpg', 'otherfile', )
+_list = ('linux.png', 'python.jpg', 'otherfile', 'empty', 'dummy.jpg', )
 
 for name in _list:
     _file = None
